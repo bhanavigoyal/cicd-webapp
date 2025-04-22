@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        MAVEN_HOME = '/usr/local/Cellar/maven/3.9.9/libexec'   // Path to your Maven installation
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
